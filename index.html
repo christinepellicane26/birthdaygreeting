@@ -11,27 +11,82 @@
 
 <body>
     <div class="happybirthday">
-     <h1 class="animate__animated animate__bounce">
-         <p>Happy Birthday!</p>
-        </h1> 
-      
-    </div>
+  <h1>Happy Birthday!</h1>
+  </div>
 
-<div class = "funstuff">
+  
+<div class = "message">
+  <h3>
+    <p>Sending some silly fun buttons to brighten your day.</p>
+    </h3>
+</div>
 
-<h3>Sending some silly fun buttons to brighten your day.</h3>
 
+<div class = "funbuttons">
 <button>
 <h2 id="demo" onclick="myFunction()">New Color!</h2>
 </button>
-<script>
+</div>
+
+
+<!-- Changes background to blue -->
+<!-- <script>
 function myFunction() {
   document.getElementsByTagName("BODY")[0].style.backgroundColor = "blue";
 }
-</script>
+</script> -->
 
- 
+<!-- Changes background repeatedly -->
+
+<script>    
+const button = document.querySelector('button');    
+const body = document.body;    
+const randomColor = () => {    
+console.log(button);    
+        body.style.background =`rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random()* 256)},${Math.floor(Math.random()* 256)})`;    
+}    
+    button.addEventListener('click', randomColor)    
+</script> 
+
+
+<!-- /*animation attempt*/ -->
+
+<div id ="cherries">
+  <div id ="myAnimation"><h2>Testing</h2></div>
 </div>
+
+<div class = "animatebutton">
+<p>
+  <button onclick="myMove()">Click Me</button>
+</p>
+</div>
+  
+  
+<div id ="myAnimation">
+<div class ="cherries">
+ </div>
+  </div>
+  
+  <script>
+  function myMove() {
+    var elem = document.getElementById("myAnimation"); 
+    var pos = 0;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (pos == 350) {
+        clearInterval(id);
+      } else {
+        pos++; 
+        elem.style.top = pos + 'px'; 
+        elem.style.left = pos + 'px'; 
+      }
+    }
+  }
+  </script>
+
+
+
+<!-- /*bubbles*/ -->
 
     <div class="square">
       <ul>
@@ -130,4 +185,5 @@ function myFunction() {
         </div>
       </div>
     </div>
+
   </body>

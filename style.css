@@ -3,16 +3,59 @@ body{
     padding: 0;
     margin: 0;
 }
- h2 {
-   color: darkblue }
 
- h3 {
-   color: yellow
+h1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 60px;
+  z-index: 1;  
+  color: white;
+}
+
+ h2 {
+   color: darkblue 
+  }
+
+h3 {
+   color: yellow;
+   text-align: center;
+   top: 90%;
+   
+  }
+
+  .message {
+  position: relative;
+  height: 100vh;
+  top: 80%;
+  overflow: hidden;
+  font-family: serif;
+  
+  }
+
+
+  
+/*buttons*/
+
+  .funbuttons {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    transform: translate(-50%, 50%);
+    font-size: 60px;
+    font-family: serif;
+  }
+
+ .animatebutton {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 60px;
+  font-family: serif;
  }
 
-h1 .animate__animated.animate__bounce {
-  --animate-duration: 2s;
-}
 
 :root {
   --animate-duration: 800ms;
@@ -27,15 +70,7 @@ h1 .animate__animated.animate__bounce {
  
    }
 
-p {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  font-size: 60px;
-  z-index: 1;  
-  color: white;
-}
+
 
 ul li {
   position: absolute;
@@ -162,6 +197,49 @@ ul li {
   
 }
 
+/* button animation attempt */
+
+/* #myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+} */
+
+
+#myAnimation { 
+
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: pink; 
+  
+}
+
+
+/* #myDIV {
+  margin: 25px;
+  width: 550px;
+  height: 100px;
+  background: orange;
+  position: relative;
+  font-size: 20px;
+}
+
+/* Chrome, Safari, Opera */
+ @-webkit-keyframes mymove{
+  from {top: 0px;}
+  to {top: 200px;}
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;} 
+}
+
+
+/* cake */
+
 .container{
     height: 280px;
     width: 300px;
@@ -226,7 +304,10 @@ ul li {
 .icing>div:nth-child(7){
     left:156px;
 }
-.cherries>div{
+
+  
+.cherries>div {
+ 
     background-color: #f7174c;
     height: 18px;
     width: 18px;
@@ -234,6 +315,8 @@ ul li {
     position: absolute;
     top:-18px;
 }
+
+
 .cherries>div:nth-child(1){
     left:8px;
 }
@@ -252,6 +335,9 @@ ul li {
 .cherries>div:nth-child(6){
     left:156px;
 }
+
+
+
 .c2{
     transform:scale(0.8);
     -webkit-transform:scale(0.8);
