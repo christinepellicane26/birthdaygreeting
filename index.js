@@ -1,3 +1,51 @@
+//CONSTANTS (you can adjust these to change how your cherry moves)
+
+//how fast you want the framerate to be. 30fps is probably fine
+const frameRate = 30;
+//change this variable to determine how long you want the cherry to take to get to its new position
+const lengthOfTime = 1;
+//change this variable to determine how many pixels you want the cherry to move by in each direction (x and y). You can use negative values as well.
+const positionMovement = { x: 400, y: 50 };
+
+// 'grab' the cherry with get element by id, store it in a variable (myCherry)
+let myCherry = document.getElementById("cherry");
+
+// this basically figures out what relative posiiton the cherry element is at and stores it in the startpositin variable as an object with x coordinates and y coordinates
+let startPosition = {
+  x: parseInt(getComputedStyle(myCherry).left),
+  y: parseInt(getComputedStyle(myCherry).top),
+};
+
+let moveCherryButton = document.getElementById("move-cherry-button");
+moveCherryButton.addEventListener("click", () => {
+  // This is where the animation happens.  the moveCherry function is called on every frame
+  let cherryInterval = setInterval(moveCherry, 1000 / frameRate);
+
+  //initialize frame to zero
+  let frame = 0;
+
+  //total number of frames
+  let totalFrames = frameRate * lengthOfTime;
+
+  function moveCherry() {
+    //clear the interval when you get to the final frame
+    if (frame == totalFrames) {
+      clearInterval(cherryInterval);
+    } else {
+      //move onto next frame
+      frame++;
+
+      // bit of math here. basically move the cherry a certain amount, depending what frame you're on
+      myCherry.style.left = `${
+        startPosition.x + (frame / totalFrames) * positionMovement.x
+      }px`;
+      myCherry.style.top = `${
+        startPosition.y + (frame / totalFrames) * positionMovement.y
+      }px`;
+    }
+  }
+});
+
 // console.clear()
 // console.log("%s is %d years old", "John", 56);
 // console.log("%s is %d years old", "William", 50);
@@ -7,9 +55,6 @@
 //   debugger
 //   console.log(i);
 // }
-
-
-
 
 /*<script>
 {/* var x = document.getElementById("myDIV");
@@ -48,4 +93,3 @@ function myEndFunction() {
 
 // </body>
 // </html>
-

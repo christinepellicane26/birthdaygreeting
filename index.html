@@ -1,92 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script type="text/javascript" src="index.js">
-</script>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-<linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="happybirthday">
-  <h1>Happy Birthday!</h1>
-  </div>
+      <h1>Happy Birthday!</h1>
+    </div>
 
-  
-<div class = "message">
-  <h3>
-    <p>Sending some silly fun buttons to brighten your day.</p>
-    </h3>
-</div>
+    <div class="message">
+      <h3>
+        <p>Sending some silly fun buttons to brighten your day.</p>
+      </h3>
+    </div>
 
+    <div class="funbuttons">
+      <button>
+        <h2 id="demo" onclick="myFunction()">New Color!</h2>
+      </button>
+      <button id="move-cherry-button">move cherry</button>
+    </div>
 
-<div class = "funbuttons">
-<button>
-<h2 id="demo" onclick="myFunction()">New Color!</h2>
-</button>
-</div>
-
-
-<!-- Changes background to blue -->
-<!-- <script>
+    <!-- Changes background to blue -->
+    <!-- <script>
 function myFunction() {
   document.getElementsByTagName("BODY")[0].style.backgroundColor = "blue";
 }
 </script> -->
 
-<!-- Changes background repeatedly -->
+    <!-- Changes background repeatedly -->
 
-<script>    
-const button = document.querySelector('button');    
-const body = document.body;    
-const randomColor = () => {    
-console.log(button);    
-        body.style.background =`rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random()* 256)},${Math.floor(Math.random()* 256)})`;    
-}    
-    button.addEventListener('click', randomColor)    
-</script> 
+    <script>
+      const button = document.querySelector("button");
+      const body = document.body;
+      const randomColor = () => {
+        console.log(button);
+        body.style.background = `rgb(${Math.floor(
+          Math.random() * 256
+        )},${Math.floor(Math.random() * 256)},${Math.floor(
+          Math.random() * 256
+        )})`;
+      };
+      button.addEventListener("click", randomColor);
+    </script>
 
+    <!-- /*animation attempt*/ -->
 
-<!-- /*animation attempt*/ -->
+    <div id="cherries">
+      <div id="myAnimation"><h2>Testing</h2></div>
+    </div>
 
-<div id ="cherries">
-  <div id ="myAnimation"><h2>Testing</h2></div>
-</div>
+    <div class="animatebutton">
+      <p>
+        <button onclick="myMove()">Click Me</button>
+      </p>
+    </div>
 
-<div class = "animatebutton">
-<p>
-  <button onclick="myMove()">Click Me</button>
-</p>
-</div>
-  
-  
-<div id ="myAnimation">
-<div class ="cherries">
- </div>
-  </div>
-  
-  <script>
-  function myMove() {
-    var elem = document.getElementById("myAnimation"); 
-    var pos = 0;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (pos == 350) {
-        clearInterval(id);
-      } else {
-        pos++; 
-        elem.style.top = pos + 'px'; 
-        elem.style.left = pos + 'px'; 
+    <div id="myAnimation">
+      <div class="cherries"></div>
+    </div>
+
+    <script>
+      function myMove() {
+        var elem = document.getElementById("myAnimation");
+        var pos = 0;
+        var id = setInterval(frame, 10);
+        function frame() {
+          console.log(pos);
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }
       }
-    }
-  }
-  </script>
+    </script>
 
-
-
-<!-- /*bubbles*/ -->
+    <!-- /*bubbles*/ -->
 
     <div class="square">
       <ul>
@@ -95,11 +93,9 @@ console.log(button);
         <li></li>
         <li></li>
         <li></li>
-  
       </ul>
-  
     </div>
-  
+
     <div class="circle">
       <ul>
         <li></li>
@@ -109,11 +105,9 @@ console.log(button);
         <li></li>
         <li></li>
         <li></li>
-  
       </ul>
-  
     </div>
-  
+
     <div class="container">
       <div class="cake c1">
         <div class="cream"></div>
@@ -128,7 +122,7 @@ console.log(button);
         </div>
 
         <div class="cherries">
-          <div></div>
+          <div id="cherry"></div>
           <div></div>
           <div></div>
           <div></div>
@@ -150,12 +144,12 @@ console.log(button);
         </div>
 
         <div class="cherries">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
+          <div class="cherry"></div>
         </div>
       </div>
 
@@ -185,5 +179,6 @@ console.log(button);
         </div>
       </div>
     </div>
-
+    <script type="text/javascript" src="index.js"></script>
   </body>
+</html>
